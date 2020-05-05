@@ -92,13 +92,6 @@ function calc($data) {
 	$p = 1.225 * exp(-0.00011856 * $data["ramp"]);
 	$fa = 0.5 * $cdA * $p * pow($vel + $w, 2);
 
-	// $satan = sin(atan($slope));
-	// $pow = pow($vel + $w, 2);
-
-	// echo "slope: $slope<br>satan: $satan<br>fg: $fg<br>fr: $fr<br>fa: $fa<br>vel: $vel<br>";
-	// echo "fg: $fg<br>fr: $fr<br>fa: $fa<br>vel: $vel<br>";
-	// echo "cda: $cdA<br>p: $p<br>pow: $pow<br>";
-
 	// P = (Fg + Fr + Fa) * v / (1 - loss)
 
 	$p = ($fg + $fr + $fa) * $vel / (1 - $loss);

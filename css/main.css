@@ -92,12 +92,6 @@ body {
     height: 80px;
 }
 
-/*
-.d-item > a, .d-item > a > span {
-    width: calc(100% - 60px);
-}
-*/
-
 .d-item > a > span > span {
     display: inline-block;
     float: right!important;
