@@ -1,0 +1,176 @@
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial';
+    font-size: 15px;
+    color: white;
+    background: #222;
+}
+
+#trail-data {
+    border: 0!important;
+}
+
+#trail-data > div {
+    margin: 0 auto;
+	width: 80%;
+}
+
+#elevation-profile {
+	bottom: initial!important;
+	right: initial!important;
+    margin-left: 50px;
+    width: calc(100% - 15px);
+}
+
+#elevation-chart {
+    max-width: 100%!important;
+    margin-top: -5px;
+    position: relative;
+}
+
+#elevation-chart .hr {
+    position: absolute;
+    border: 1px white dashed!important;
+        width: calc(108.333% + 7px);
+    top: 3px;
+    left: calc(-8.3333% - 7px);
+}
+
+.height-80 {
+    height: 80%;
+}
+
+.height-20 {
+    height: 20%;
+}
+
+.longs {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.longs > div {
+    display: inline-block;
+    width: calc(20% - 8.3333% / 5 - 13px / 5);
+}
+
+.longs > div:first-child {
+    margin-left: 8.3333%;
+}
+
+#elevation {
+    background-color: #444;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+#el-max {
+    padding-top: 3px;
+}
+
+#el-min {
+    position: absolute;
+    bottom: 0;
+}
+
+#elevation, #elevation > .row {
+    height: 100%;
+    position: relative;
+}
+
+#elevation .col-xs-1 {
+    height: 80px;
+}
+
+/*
+.d-item > a, .d-item > a > span {
+    width: calc(100% - 60px);
+}
+*/
+
+.d-item > a > span > span {
+    display: inline-block;
+    float: right!important;
+    margin-left: 15px;
+}
+
+.up { color: lightgreen!important; }
+.down { color: red!important; }
+
+.item > h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.more-data {
+    border-top: 0!important;
+    margin: 0!important;
+    padding: 0!important;
+}
+
+.data-items {
+    margin-bottom: 0!important;
+}
+
+.days .item, .days .totals {
+    border: 1px white dashed;
+    padding-bottom: 10px;
+}
+
+.days .item:nth-child(even), .days .totals {
+    border-left: 0!important;
+}
+
+.days .col-md-3:nth-child(n+5) {
+    border-top: 0!important;
+}
+
+div#trail-data div.data-items div.d-item {
+    width: 50%!important;
+}
+
+.kcal, .kcal > span, .time, .time > span {
+    font-size: 10px!important;
+}
+
+.kcal {
+    width: calc(100% - 42px);
+    position: relative;
+}
+
+.kcal > span {
+    display: inline-block;
+    margin-left: 0!important;
+}
+
+.kcal > span:first-child {
+    width: 100%;
+    height: 0px;
+}
+
+.kcal > span:nth-child(2) {
+    left: 0;
+}
+
+.kcal > span:nth-child(3) {
+    left: 33px;
+}
+
+.kcal > span:not(:first-child) {
+    width: calc(50% - 42px / 2);
+    position: absolute!important;
+    top: 10px;
+}
+
+.totals {
+    height: 408px;
+}
+
+.totals .title {
+    text-align: center;
+}

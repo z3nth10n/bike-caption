@@ -1,0 +1,9 @@
+{
+    "name": "z3nth10n/bike-caption",
+    "type": "project",
+    "require": {
+        "paquettg/php-html-parser": "^2.2",
+        "nesk/puphpeteer": "^1.6"
+    },
+    "license": "MIT"
+}
