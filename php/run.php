@@ -134,7 +134,11 @@ function resolve() {
 }
 
 function getSpan($dom, $i) {
-    return $dom->find('.d-item')[$i]->find('span')[1];
+    $j = 1;
+    $ditem = $dom->find('.d-item')[$i];
+    if(strpos($ditem->getAttribute('class'), 'special') !== false)
+        $j = 0;
+    return $ditem->find('span')[$j];
 }
 
 function modifySpan($dom, $i, $d, $type = '') {
