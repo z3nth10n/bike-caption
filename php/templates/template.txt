@@ -1,0 +1,144 @@
+    <div id="trail-data" class="clearfix">
+        <div class="data-items clearfix">
+            <div class="d-item">
+                <a href="#" title="Distancia&nbsp;[DISTANCE]&nbsp;kilómetros">
+                    <span class="trail-data-icon glyphicon icon-length"></span>
+                    <span>[DISTANCE]&nbsp;km</span></a>
+            </div>
+            <div class="d-item right">
+                <a href="#" title="Finaliza en el punto de partida (circular)&nbsp;Sí">
+                    <span class="trail-data-icon glyphicon icon-loop"></span>
+                    <span>[RETURNABLE]</span>
+                </a>
+            </div>
+            <div class="d-item">
+                <a href="#" title="Desnivel acumulado&nbsp;subiendo&nbsp;[RAMP]&nbsp;metros">
+                    <span class="trail-data-icon glyphicon icon-uphill"></span>
+                    <span>[RAMP]&nbsp;m</span>
+                </a>
+            </div>
+            <div class="d-item right">
+                <a href="#" title="Altitud&nbsp;max&nbsp;[HIGHER_ALT]&nbsp;metros">
+                    <span class="trail-data-icon glyphicon icon-height"></span>
+                    <span>[HIGHER_ALT]&nbsp;m</span>
+                </a>
+            </div>
+            <div class="d-item">
+                <a href="#" title="Desnivel acumulado&nbsp;bajando&nbsp;[RAMP]&nbsp;metros">
+                    <span class="trail-data-icon glyphicon icon-downhill"></span>
+                    <span>[RAMP]&nbsp;m</span>
+                </a>
+            </div>
+            <div class="d-item right">
+                <a href="#" title="Altitud&nbsp;min&nbsp;[LOWER_ALT]&nbsp;metros">
+                    <span class="trail-data-icon glyphicon icon-low"></span>
+                    <span>[LOWER_ALT]&nbsp;m</span>
+                </a>
+            </div>
+            <div class="d-item">
+                <a href="#" title="Dificultad técnica:&nbsp;[DIFFICULTY]">
+                    <span class="trail-data-icon glyphicon icon-difficult"></span>
+                    <span>[DIFFICULTY]</span>
+                </a>
+            </div>
+            <div class="d-item right">
+                <a href="#" title="Tiempo:&nbsp;xxx">
+                    <span class="trail-data-icon glyphicon icon-difficult"></span>
+                    <span class="time">[TIME]</span>
+                </a>
+            </div>
+            <div class="d-item">
+                <a href="#" title="Watts: [POWER] W / KCal: [KCALS] Kcal / Joules: [JOULES] J / W/kg: [WATTPERKG]">
+                    <span class="trail-data-icon glyphicon icon-fire"></span>
+                    <span class="kcal">[POWER] W/[KCALS] Kcal</span>
+                </a>
+            </div>
+            <div class="d-item right">
+                <a href="#" title="Velocidad:&nbsp;xxx">
+                    <span class="trail-data-icon glyphicon icon-difficult"></span>
+                    <span>[VELOCITY] Km/h</span>
+                </a>
+            </div>
+        </div>
+        <!-- data.items -->
+        
+        <div class="more-data">
+        	<!---
+            <h4>Coordenadas&nbsp;<span>344</span></h4>
+            <h4>Fecha de subida&nbsp;<span>4 de mayo de 2020</span></h4>
+            <h4>Fecha de realización&nbsp;<span>mayo 2020</span></h4>
+            -->
+        </div>
+    </div>
+    <!---
+    <div id="elevation-profile">
+        <div id="elevation-chart">
+            <div id="pos-marker" style="display: none; left: 61px;"></div>
+            <div id="pos-marker-current-alt" style="display: none; left: 39px;"><span id="pm-alt">399,3m</span></div>
+            <div id="pos-marker-current-pos" style="display: none; left: 40.5px;"><span id="pm-pos">2,9 km</span></div>
+            <div class="svg-wrapper">
+                <svg id="elevation-profile-svg" viewBox="0 0 400 80">
+                    <defs>
+                        <linearGradient id="elevGradient" x1="0" y1="0" x2="0" y2="0.9">
+                            <stop offset="0" stop-color="#E99200"></stop>
+                            <stop offset="1" stop-color="#447E27"></stop>
+                        </linearGradient>
+                    </defs>
+                    <polyline fill="url(#elevGradient)" stroke="#f5a000" stroke-width="2" points="[POINTS]" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:#ffba39;"></polyline>
+                </svg>
+                <svg id="elevation-profile-dot" viewBox="0 0 400 80">
+                    <circle id="position-dot" r="5" fill="#008fe8" stroke="white" stroke-width="2" cx="60.53898788296578" cy="70.31335740072203" data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:#41b6ff; --darkreader-inline-stroke:#ffffff; display: none;"></circle>
+                </svg>
+            </div>
+        </div>
+        <div id="el-max">[HIGHER_ALT]&nbsp;m</div>
+        <div id="el-min">[LOWER_ALT]&nbsp;m</div>
+        <div class="el-len">
+            <div>0</div>
+            <div>[LEN1]</div>
+            <div>[LEN2]</div>
+            <div>[LEN3]</div>
+            <div>[DISTANCE]&nbsp;km</div>
+        </div>
+    -->
+        <div class="container-fluid" id="elevation">
+            <div class="row">
+                <div class="col-xs-1 height-80">
+                    <div id="el-max">[HIGHER_ALT]&nbsp;m</div>
+                    <div id="el-min">[LOWER_ALT]&nbsp;m</div>
+                </div>
+                <div class="col-xs-11 height-80">
+                    <div id="elevation-chart" id="elevation-chart">
+                        <div class="hr"></div>
+                        <div class="svg-wrapper">
+                            <svg id="elevation-profile-svg" viewBox="0 0 400 80">
+                                <defs>
+                                    <linearGradient id="elevGradient" x1="0" y1="0" x2="0" y2="0.9">
+                                        <stop offset="0" stop-color="#E99200"></stop>
+                                        <stop offset="1" stop-color="#447E27"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <polyline fill="url(#elevGradient)" stroke="#f5a000" stroke-width="2" points="[POINTS]" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke:#ffba39;"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 height-20 longs">
+                    <div>0</div>
+                    <div>[LEN1]</div>
+                    <div>[LEN2]</div>
+                    <div>[LEN3]</div>
+                    <div>[DISTANCE]&nbsp;km</div>
+                </div>
+            </div>
+        </div>
+        <!---
+        <div id="el-len1" class="el-len">0</div>
+        <div id="el-len2" class="el-len">[LEN1]</div>
+        <div id="el-len3" class="el-len">[LEN2]</div>
+        <div id="el-len4" class="el-len hidden-xs">[LEN3]</div>
+        <div id="el-len5" class="el-len">[DISTANCE]&nbsp;km</div>
+    </div>
+    -->

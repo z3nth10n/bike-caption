@@ -1,0 +1,31 @@
+<div class="col-md-[COLSIZE] totals">
+	<div class="container-fluid">
+		<div class="row">
+	        <div class="col-xs-12">
+	        	<h3 class="title">Valores totales</h3>
+	        </div>
+	    </div>
+	    <div class="row">
+	        <div class="col-xs-6">
+	        	<p><h3>Distancia total</h3></p>
+	        	<p>[TOTAL_DIST] Km</p>
+	        </div>
+	        <div class="col-xs-6">
+	        	<p><h3>Tiempo total</h3></p>
+	        	<p>[TOTAL_TIME]</p>
+	        </div>
+	        <div class="col-xs-6">
+	        	<p>
+	        		<h3>Potencia (W) total</h3>
+	        	</p>
+	        	<p>[TOTAL_PWR] W</p>
+	        </div>
+	        <div class="col-xs-6">
+	        	<p>
+	        		<h3>KCal totales</h3>
+	        	</p>
+	        	<p>[TOTAL_KCALS] KCal</p>
+	        </div>
+	    </div>
+	</div>
+</div>
