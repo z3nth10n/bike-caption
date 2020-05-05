@@ -55,6 +55,8 @@ function resolve() {
             "VELOCITY" => $pdata["velocity"],
             "POWER" => $pdata["power"],
             "KCALS" => $pdata["kcal"],
+            "JOULES" => $pdata["joules"],
+            "WATTPERKG" => $pdata["wperkg"],
         );
 
         $source .= "<h3>Día ".($i + 1)."</h3>";

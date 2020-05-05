@@ -45,21 +45,21 @@ https://i.gyazo.com/7c4d49539ae8116fff76f84537611213.png
 
 ρ = ρₒ * exp[(-g * Mₒ * h) / (R * Tₒ)]
 
-ρ is the air density,
-ρₒ is the air density at the sea level, equal to 1.225 kg/m³,
-g is the gravitational acceleration, equal to 9.80655 m/s²,
-Mₒ is the molar mass of Earth's air, equal to 0.0289644 kg/mol,
-h is the elevation above sea level,
-R is the universal gas constant for air, equal to 8.3144598 N·m/(mol·K),
-Tₒ is the standard temperature equal to 288.15 K.
+- ρ is the air density,
+- ρₒ is the air density at the sea level, equal to 1.225 kg/m³,
+- g is the gravitational acceleration, equal to 9.80655 m/s²,
+- Mₒ is the molar mass of Earth's air, equal to 0.0289644 kg/mol,
+- h is the elevation above sea level,
+- R is the universal gas constant for air, equal to 8.3144598 N·m/(mol·K),
+- Tₒ is the standard temperature equal to 288.15 K.
 
 ρ = 1.225 * exp(-0.00011856 * h)
 
 Power losses:
 
-3% for a new, well-oiled chain;
-4% for a dry chain (for example, when the oil has been washed away by rain);
-5% for a dry chain that is so old it became elongated.
+- 3% for a new, well-oiled chain;
+- 4% for a dry chain (for example, when the oil has been washed away by rain);
+- 5% for a dry chain that is so old it became elongated.
 
 Calories = ((Power * Time) / 4.18 ) / 0.24
 
@@ -74,23 +74,30 @@ function calc($data) {
 	// Fg = g * sin(arctan(slope)) * (M + m)
 
 	$g = 9.80655;
-	$slope = $data["distance"] * 1000 / $data["ramp"]; // Needs more precision (stages)
+	$slope = $data["ramp"] / ($data["distance"] * 1000); // Needs more precision (stages)
 
-	$M = 74;
+	$Mass = 74;
 	$m = 15;
 
-	$fg = $g * sin(atan($slope)) * ($M + $m);
+	$fg = $g * sin(atan($slope)) * ($Mass + $m);
 
 	// Fr = g * cos(arctan(slope)) * (M + m) * Crr
 
-	$fr = $g * cos(atan($slope)) * ($M + $m) * 	0.0063; // % of each stage (off-road, asphalt...)
+	$fr = $g * cos(atan($slope)) * ($Mass + $m) * 0.0063; // % of each stage (off-road, asphalt...)
 
 	// Fa = 0.5 * Cd * A * ρ * (v + w)²
 
 	$cdA = 0.324;
-	$w = 10;
+	$w = 10 / 3.6;
 	$p = 1.225 * exp(-0.00011856 * $data["ramp"]);
 	$fa = 0.5 * $cdA * $p * pow($vel + $w, 2);
+
+	// $satan = sin(atan($slope));
+	// $pow = pow($vel + $w, 2);
+
+	// echo "slope: $slope<br>satan: $satan<br>fg: $fg<br>fr: $fr<br>fa: $fa<br>vel: $vel<br>";
+	// echo "fg: $fg<br>fr: $fr<br>fa: $fa<br>vel: $vel<br>";
+	// echo "cda: $cdA<br>p: $p<br>pow: $pow<br>";
 
 	// P = (Fg + Fr + Fa) * v / (1 - loss)
 
@@ -98,13 +105,17 @@ function calc($data) {
 
 	// Cal = ((Power * Time) / 4.18 ) / 0.24
 
-	$p /= 1000;
+	$joules = $p * $data["time"] / 0.24;
+	$cal = $joules / 4184;
+	// (($p * $data["time"]) / 4.18) * 0.24;
 
-	$cal = (($p * $data["time"]) / 4.18) * 0.24;
+	$wperkg = $p / $Mass;
 
 	$rdata["power"] = round($p, 2);
 	$rdata["kcal"] = round($cal, 2);
-	$rdata["velocity"] = round($vel, 2);
+	$rdata["velocity"] = round($vel * 3.6, 2);
+	$rdata["joules"] = round($joules, 2);
+	$rdata["wperkg"] = round($wperkg, 2);
 
 	return $rdata;
 }

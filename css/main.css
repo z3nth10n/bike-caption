@@ -61,6 +61,11 @@ body {
     margin-left: 8.3333%;
 }
 
+/* :not(:first-child):not(:last-child) */
+.longs > div {
+    text-align: center;
+}
+
 #elevation {
     background-color: #444;
     font-size: 11px;
@@ -75,7 +80,7 @@ body {
 
 #el-min {
     position: absolute;
-    bottom: 0;
+    bottom: -15px;
 }
 
 #elevation, #elevation > .row {
@@ -158,7 +163,7 @@ div#trail-data div.data-items div.d-item {
 }
 
 .kcal > span:nth-child(3) {
-    left: 33px;
+    left: 40px;
 }
 
 .kcal > span:not(:first-child) {
