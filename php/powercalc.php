@@ -83,7 +83,11 @@ function calc($data) {
 
 	// Fr = g * cos(arctan(slope)) * (M + m) * Crr
 
-	$fr = $g * cos(atan($slope)) * ($Mass + $m) * 0.0063; // % of each stage (off-road, asphalt...)
+	$offroad = ($data["offroad_distance"] / $data["distance"]) * 0.0253;
+	$asphalt = (($data["distance"] - $data["offroad_distance"]) / $data["distance"])  * 0.0063;
+	$Crr = $offroad + $asphalt;
+
+	$fr = $g * cos(atan($slope)) * ($Mass + $m) * $Crr; // % of each stage (off-road, asphalt...)
 
 	// Fa = 0.5 * Cd * A * ρ * (v + w)²
 

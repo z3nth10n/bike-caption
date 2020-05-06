@@ -62,7 +62,7 @@ body {
 }
 
 /* :not(:first-child):not(:last-child) */
-.longs > div {
+.longs > div:not(:first-child) {
     text-align: center;
 }
 
@@ -72,6 +72,7 @@ body {
     font-weight: bold;
     padding: 5px 10px;
     width: 100%;
+    margin-top: 10px;
 }
 
 #el-max {
@@ -106,6 +107,12 @@ body {
     margin-top: 10px;
 }
 
+.item h5 {
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+}
+
 .more-data {
     border-top: 0!important;
     margin: 0!important;
@@ -121,7 +128,7 @@ body {
     padding-bottom: 10px;
 }
 
-.days .item:nth-child(even), .days .totals {
+.days .item:nth-child(even), .days .item:nth-child(3), .days .totals {
     border-left: 0!important;
 }
 
@@ -132,6 +139,8 @@ body {
 div#trail-data div.data-items div.d-item {
     width: 50%!important;
 }
+
+/*
 
 .kcal, .kcal > span, .time, .time > span {
     font-size: 10px!important;
@@ -165,11 +174,74 @@ div#trail-data div.data-items div.d-item {
     position: absolute!important;
     top: 10px;
 }
+*/
 
 .totals {
-    height: 408px;
+    height: 354px;
 }
 
 .totals .title {
     text-align: center;
+}
+
+.flexible-height {
+    height: 356px;
+}
+
+.cap-item .fal {
+    font-weight: 300!important;
+    font-size: 30px!important;
+    margin: 0 6px;
+}
+
+.kcals, .kcals span {
+    font-size: 10px!important;
+}
+
+.kcals > span:nth-child(2) {
+    height: 13px;
+    /* margin-top: -7px; */
+}
+
+/*
+.kcals > span:nth-child(3) {
+    height: 0px;
+}
+*/
+
+/*
+.cap-item > a > span:nth-child(3) {
+    display: block;
+}
+*/
+
+.kcals > span:first-child {
+    display: inline-block;
+}
+
+.kcals > div {
+    display: inline-block;
+}
+
+.kcals > div > span:nth-child(2) {
+    display: block;
+}
+
+.data a {
+    color: white;
+    text-decoration: none;
+    cursor: default;
+}
+
+.date {
+    font-size: 11px;
+    padding-left: 5px;
+}
+
+.trail-data-icon {
+    font-size: 30px;
+}
+
+.fix-margin {
+    margin-top: -31px;
 }

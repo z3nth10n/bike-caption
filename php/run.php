@@ -2,6 +2,10 @@
 
 require "vendor/autoload.php";
 use PHPHtmlParser\Dom;
+use PHPHtmlParser\Dom\HtmlNode;
+use PHPHtmlParser\Dom\TextNode;
+use PHPHtmlParser\Dom\MockNode;
+use PHPHtmlParser\Dom\Tag;
 
 require __DIR__ . "/powercalc.php";
 require __DIR__ . "/../data.php";
@@ -57,17 +61,19 @@ function resolve() {
             "KCALS" => $pdata["kcal"],
             "JOULES" => $pdata["joules"],
             "WATTPERKG" => $pdata["wperkg"],
+            "DATE" => $data["date"],
+            "DESC" => $data["desc"]
         );
 
-        $source .= "<h3>Día ".($i + 1)."</h3>";
+        $source .= "<h3>Día ".($i + 1)."<span class='date'>[DATE]</span></h3><!--- <h5>[DESC]</h5> -->";
         $source .= file_get_contents(__DIR__ . "/templates/template.txt");
         foreach ($placeholder as $key => $item) {
             $source = str_replace("[".$key."]", $item, $source);
         }
         $source .= '</div>';
-        if($i == 1) {
-            $source .= '<div class="col-md-3" style="height: 408px;"></div>';
-            $source .= '<div class="col-md-3" style="height: 408px;"></div>';
+        if($i == 2) {
+            $source .= '<div class="col-md-3 flexible-height"></div>';
+            // $source .= '<div class="col-md-3 flexible-height"></div>';
         }
 
         if($startdiff === true) {
@@ -125,8 +131,8 @@ function resolve() {
     foreach ($totalholders as $key => $item) {
         $source = str_replace("[".$key."]", $item, $source);
     }
-    $source .= '<div class="col-md-3" style="height: 408px;"></div>';
-    $source .= '<div class="col-md-3" style="height: 408px;"></div>';
+    $source .= '<div class="col-md-3 flexible-height"></div>';
+    $source .= '<div class="col-md-3 flexible-height"></div>';
 
     // =======
     $source = '<div class="container-fluid days"><div class="row">'.$source.'</div></div>';
@@ -134,17 +140,20 @@ function resolve() {
 }
 
 function getSpan($dom, $i) {
-    $j = 1;
-    $ditem = $dom->find('.d-item')[$i];
-    if(strpos($ditem->getAttribute('class'), 'special') !== false)
-        $j = 0;
-    return $ditem->find('span')[$j];
+    // $j = 1;
+    $ditem = $dom->find('.cap-item')[$i];
+    // if(strpos($ditem->getAttribute('class'), 'special') !== false)
+    //    $j = 0;
+    $span = $ditem->find('span');
+    return count($span) == 1 ? $ditem->find('div')[0] : $span[1];
 }
 
 function modifySpan($dom, $i, $d, $type = '') {
+    // return $dom;
+
     $diff = is_array($d) ? null : $d;
     $span = getSpan($dom, $i);
-    $oldtext = $span->firstChild()->text;
+    // $oldtext = $span->firstChild()->text;
     $fdiff = null;
     if($type == '') {
         $fdiff = findDiff($diff);
@@ -152,9 +161,14 @@ function modifySpan($dom, $i, $d, $type = '') {
         $fdiff = findDiffFormatted($diff, ($diff < 0 ? "-" : "").str_replace("-", "", toTime($diff)), true);
     } else if($type == 'power') {
         $fdiff = findDiffFormatted($d[0], $d[0].'/').findDiff($d[1]);
-        $oldtext = "<span>".$oldtext."</span>";
-    } 
-    $span->firstChild()->setText($oldtext.$fdiff);
+        // $oldtext = "<span>".$oldtext."</span>";
+    }
+    // die($span->getParent()->outerHtml);
+    // $span->getParent()->lastChild()->setText($oldtext.$fdiff);
+
+    $newspan = new HtmlNode('span');
+    $newspan->addChild(new TextNode($fdiff));
+    $span->getParent()->addChild($newspan);
     return $dom;
 }
 
@@ -164,7 +178,7 @@ function findDiff($diff) {
     } else if($diff < 0) {
         return "<span class='down'>".$diff."</span>";
     } else {
-        return "<span>0.00</span>";
+        return "<span>(0.00)</span>";
     }
 }
 
@@ -174,7 +188,7 @@ function findDiffFormatted($diff, $text, $inverse = false) {
     } else if($diff < 0) {
         return "<span class='".($inverse ? "up" : "down")."'>".$text."</span>";
     } else {
-        return "<span>0.00</span>";
+        return "<span>(0.00)</span>";
     }
 }
 

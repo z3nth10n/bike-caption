@@ -22,9 +22,9 @@
 	        </div>
 	        <div class="col-xs-6">
 	        	<p>
-	        		<h3>KCal totales</h3>
+	        		<h3>kcal totales</h3>
 	        	</p>
-	        	<p>[TOTAL_KCALS] KCal</p>
+	        	<p>[TOTAL_KCALS] kcal</p>
 	        </div>
 	    </div>
 	</div>

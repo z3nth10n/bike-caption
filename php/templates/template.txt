@@ -1,73 +1,131 @@
-    <div id="trail-data" class="clearfix">
-        <div class="data-items clearfix">
-            <div class="d-item">
+    <div class="data">
+        <div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-6 cap-item">
+                        <a href="#" title="Distancia&nbsp;[DISTANCE]&nbsp;kilómetros">
+                            <span class="trail-data-icon glyphicon icon-length"></span>
+                            <span>[DISTANCE]&nbsp;km</span></a>
+                    </div>
+                    <div class="col-xs-6 cap-item">
+                        <a href="#" title="Finaliza en el punto de partida (circular)&nbsp;Sí">
+                            <span class="trail-data-icon glyphicon icon-loop"></span>
+                            <span>[RETURNABLE]</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 cap-item">
+                        <a href="#" title="Desnivel acumulado&nbsp;subiendo&nbsp;[RAMP]&nbsp;metros">
+                            <span class="trail-data-icon glyphicon icon-uphill"></span>
+                            <span>[RAMP]&nbsp;m</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 cap-item">
+                        <a href="#" title="Altitud&nbsp;max&nbsp;[HIGHER_ALT]&nbsp;metros">
+                            <span class="trail-data-icon glyphicon icon-height"></span>
+                            <span>[HIGHER_ALT]&nbsp;m</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 cap-item">
+                        <a href="#" title="Desnivel acumulado&nbsp;bajando&nbsp;[RAMP]&nbsp;metros">
+                            <span class="trail-data-icon glyphicon icon-downhill"></span>
+                            <span>[RAMP]&nbsp;m</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 cap-item">
+                        <a href="#" title="Altitud&nbsp;min&nbsp;[LOWER_ALT]&nbsp;metros">
+                            <span class="trail-data-icon glyphicon icon-low"></span>
+                            <span>[LOWER_ALT]&nbsp;m</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 cap-item">
+                        <a href="#" title="Dificultad técnica:&nbsp;[DIFFICULTY]">
+                            <span class="trail-data-icon glyphicon icon-difficult"></span>
+                            <span>[DIFFICULTY]</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 cap-item">
+                        <a href="#" title="Tiempo:&nbsp;xxx">
+                            <span class="fal fa-clock"></span>
+                            <span class="time">[TIME]</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 cap-item">
+                        <a class="kcals" href="#" title="Watts: [POWER] W / KCal: [KCALS] Kcal / Joules: [JOULES] J / W/kg: [WATTPERKG]">
+                            <span class="fal fa-fire"></span>
+                            <div>
+                                <span>[POWER] W/[KCALS] kcal</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-6 cap-item fix-margin">
+                        <a href="#" title="Velocidad:&nbsp;xxx">
+                            <span class="fal fa-tachometer-alt-fastest"></span>
+                            <span>[VELOCITY] km/h</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!---
+            <div class="col-xs-6 cap-item">
                 <a href="#" title="Distancia&nbsp;[DISTANCE]&nbsp;kilómetros">
                     <span class="trail-data-icon glyphicon icon-length"></span>
                     <span>[DISTANCE]&nbsp;km</span></a>
             </div>
-            <div class="d-item right">
+            <div class="col-xs-6 cap-item right">
                 <a href="#" title="Finaliza en el punto de partida (circular)&nbsp;Sí">
                     <span class="trail-data-icon glyphicon icon-loop"></span>
                     <span>[RETURNABLE]</span>
                 </a>
             </div>
-            <div class="d-item">
+            <div class="col-xs-6 cap-item">
                 <a href="#" title="Desnivel acumulado&nbsp;subiendo&nbsp;[RAMP]&nbsp;metros">
                     <span class="trail-data-icon glyphicon icon-uphill"></span>
                     <span>[RAMP]&nbsp;m</span>
                 </a>
             </div>
-            <div class="d-item right">
+            <div class="col-xs-6 cap-item right">
                 <a href="#" title="Altitud&nbsp;max&nbsp;[HIGHER_ALT]&nbsp;metros">
                     <span class="trail-data-icon glyphicon icon-height"></span>
                     <span>[HIGHER_ALT]&nbsp;m</span>
                 </a>
             </div>
-            <div class="d-item">
+            <div class="col-xs-6 cap-item">
                 <a href="#" title="Desnivel acumulado&nbsp;bajando&nbsp;[RAMP]&nbsp;metros">
                     <span class="trail-data-icon glyphicon icon-downhill"></span>
                     <span>[RAMP]&nbsp;m</span>
                 </a>
             </div>
-            <div class="d-item right">
+            <div class="col-xs-6 cap-item right">
                 <a href="#" title="Altitud&nbsp;min&nbsp;[LOWER_ALT]&nbsp;metros">
                     <span class="trail-data-icon glyphicon icon-low"></span>
                     <span>[LOWER_ALT]&nbsp;m</span>
                 </a>
             </div>
-            <div class="d-item">
+            <div class="col-xs-6 cap-item">
                 <a href="#" title="Dificultad técnica:&nbsp;[DIFFICULTY]">
                     <span class="trail-data-icon glyphicon icon-difficult"></span>
                     <span>[DIFFICULTY]</span>
                 </a>
             </div>
-            <div class="d-item right">
+            <div class="col-xs-6 cap-item right">
                 <a href="#" title="Tiempo:&nbsp;xxx">
-                    <span class="trail-data-icon glyphicon icon-difficult"></span>
+                    <span class="fa fa-clock-o" aria-hidden="true"></span>
                     <span class="time">[TIME]</span>
                 </a>
             </div>
-            <div class="d-item">
+            <div class="col-xs-6 cap-item">
                 <a href="#" title="Watts: [POWER] W / KCal: [KCALS] Kcal / Joules: [JOULES] J / W/kg: [WATTPERKG]">
                     <span class="trail-data-icon glyphicon icon-fire"></span>
                     <span class="kcal">[POWER] W/[KCALS] Kcal</span>
                 </a>
             </div>
-            <div class="d-item right">
+            <div class="col-xs-6 cap-item right">
                 <a href="#" title="Velocidad:&nbsp;xxx">
                     <span class="trail-data-icon glyphicon icon-difficult"></span>
                     <span>[VELOCITY] Km/h</span>
                 </a>
             </div>
-        </div>
-        <!-- data.items -->
-        
-        <div class="more-data">
-        	<!---
-            <h4>Coordenadas&nbsp;<span>344</span></h4>
-            <h4>Fecha de subida&nbsp;<span>4 de mayo de 2020</span></h4>
-            <h4>Fecha de realización&nbsp;<span>mayo 2020</span></h4>
-            -->
+        -->
         </div>
     </div>
     <!---
