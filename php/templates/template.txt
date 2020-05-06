@@ -3,7 +3,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xs-6 cap-item">
-                        <a href="#" title="Distancia&nbsp;[DISTANCE]&nbsp;kilómetros">
+                        <a class="distance" href="#" title="Distancia&nbsp;[DISTANCE]&nbsp;kilómetros">
                             <span class="trail-data-icon glyphicon icon-length"></span>
                             <span>[DISTANCE]&nbsp;km</span></a>
                     </div>
@@ -50,7 +50,7 @@
                         </a>
                     </div>
                     <div class="col-xs-6 cap-item">
-                        <a class="kcals" href="#" title="Watts: [POWER] W / KCal: [KCALS] Kcal / Joules: [JOULES] J / W/kg: [WATTPERKG]">
+                        <a class="kcals" href="#" title="Watts: [POWER] W / kcal: [KCALS] kcal / Joules: [JOULES] J / W/kg: [WATTPERKG]">
                             <span class="fal fa-fire"></span>
                             <div>
                                 <span>[POWER] W/[KCALS] kcal</span>

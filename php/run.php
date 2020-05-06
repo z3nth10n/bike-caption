@@ -94,10 +94,10 @@ function resolve() {
             $dom = modifySpan($dom, $i * $num + 5, $lastloweralt - $data["lower_alt"]);
 
             // TIME
-            $dom = modifySpan($dom, $i * $num + 7, $data["time"] - $lasttime, 'time');
+            $dom = modifySpan($dom, $i * $num + 7, $data["time"] - $lasttime, array($pdata["velocity"], $lastvel), 'time');
 
             // POWER
-            $dom = modifySpan($dom, $i * $num + 8, array($pdata["power"] - $lastpower, $pdata["kcal"] - $lastkcal), 'power');
+            $dom = modifySpan($dom, $i * $num + 8, array($pdata["power"] - $lastpower, $pdata["kcal"] - $lastkcal), null, 'power');
 
             // VELOCITY
             $dom = modifySpan($dom, $i * $num + 9, $pdata["velocity"] - $lastvel);
@@ -148,7 +148,7 @@ function getSpan($dom, $i) {
     return count($span) == 1 ? $ditem->find('div')[0] : $span[1];
 }
 
-function modifySpan($dom, $i, $d, $type = '') {
+function modifySpan($dom, $i, $d, $data = null, $type = '') {
     // return $dom;
 
     $diff = is_array($d) ? null : $d;
@@ -158,7 +158,7 @@ function modifySpan($dom, $i, $d, $type = '') {
     if($type == '') {
         $fdiff = findDiff($diff);
     } else if($type == 'time') {
-        $fdiff = findDiffFormatted($diff, ($diff < 0 ? "-" : "").str_replace("-", "", toTime($diff)), true);
+        $fdiff = findDiffFormatted($diff, ($diff < 0 ? "-" : "").str_replace("-", "", toTime($diff)), $data[0] > $data[1]);
     } else if($type == 'power') {
         $fdiff = findDiffFormatted($d[0], $d[0].'/').findDiff($d[1]);
         // $oldtext = "<span>".$oldtext."</span>";

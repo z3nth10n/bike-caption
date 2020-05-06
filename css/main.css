@@ -196,3 +196,7 @@ div#trail-data div.data-items div.d-item {
 .fix-margin {
     margin-top: -31px;
 }
+
+.distance > span:nth-child(3) {
+    padding-left: 5px;
+}
